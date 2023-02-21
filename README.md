@@ -8,43 +8,169 @@ The user will plug in their user information via the comand line interface, and 
 
 ##  Background 
 
-The vision of my project is to create a medical bot that can compile a portfolio for the user, based on the medical insurance information provided. Many wealthy investors, or individuals with relatively low-cost medical insurance, may have the opportunity to set aside a certain amount of capital to allow insurance to ‘pay for itself’. Such an investment would have to be a significant investment indeed, but the prospect of having a potentially ‘free’ insurance coverage will be attractive to many investors. Dividend yields, crypto-currency staking yields, as well as stock returns may be evaluated as possible investment options. Instead of saving money, we could look to curate a portfolio that could potentially ‘completely pay for’ our medical insurance.
+The vision of the application will be to create a medical bot that will be able to compile a portfolio for the user, based on the medical insurance information provided. Many wealthy investors, or individuals with relatively low-cost medical insurance, may have the opportunity to set aside a certain amount of capital to allow insurance to ‘pay for itself’. Such an investment would have to be a significant investment indeed, but the prospect of having a potentially ‘free’ insurance coverage will be attractive to many investors. Dividend yields, crypto-currency staking yields, as well as stock returns may be evaluated as possible investment options. Instead of saving money, we could look to curate a portfolio that could potentially ‘completely pay for’ our medical insurance.
+
+## Features and Implementation - Vision:
+
+ ● Questionary: The program will act as a sort of ‘chat bot’, that will ask the user about their current insurance information. As of now, the user will only be prompted for their age, their current medical insurance charges, and their risk tolerance.  The complexity could develop as follows, in further project iterations / updates :
+    ○ The program could ask for medical insurance-related information, and follow that up with a few parameters for increased functionality – such as the country they live in, their state, and so on.
+    ○ The program could ask for detailed medical information, and detailed portfolio specifications, which would mean that there would have to be a large amount of underlying code. The Ability to increase functionality, improve data reliability, and allow for more predictive features may open this project up to act as a ‘base’, through which all ensuing projects can add upon.
+● Medical insurance prediction - based on provided information on the questionary:
+    ○ Currently, the medical insurance prediction is done via. quantitatively analyzing the medical insurance data as if it were an appreciating asset. By using the 'age' input as a replacement for 'date', and the 'medical charges' as a replacement for 'price', we can treat the medical insurance information as an appreciating asset. By applying .pct_change(), the program can find the 'return value' of the medical insurance data, or the increase in it's price.
+    ○ Using annual medical insurance charges and finding the cumulative returns of the increasing medical insurance costs, we can input the users reported md charge and age, and plot the potential increased in medical insurance costs. once this has ben done, we can compare our results to ouur optimized portfolios returns, and see when/if the portfolio has began producing cumulative returns greater than those of the rising MD insurance.
+    ○ The program finds the rate-of-change in medical insurance costs, to make a customized prediction (this was the course of action, due to reliability concerns).
+● Portfolio Curator / Optimization:
+    ○ The program uses an API to generate or ‘pull in’ data. Alpacas API was used, due to it's ease of use and the crypotcurrency holdings which can be played around with in further updates. APi's allow users to pull in and access stocks, and cryptocurrency securities. I could create a ‘monte carlo sim’ to make a prediction while the program is running. The key would be to have an effective way of curating semi-random portfolios, and evaluating which ones could eventually pay for the user's medical insurance.
+    ○ Potentially, depending on how ‘soon’ the user wishes for his ‘MDI portfolio to cover his insurance, different timeframes could be put in place. A question could eventually be asked : ‘in how many years are you looking to have your insurance bill covered?’-- such decisions need time to think through the overall design of the application.
+        ■ The tradeoff would be that the sooner the customer wants to have his medical bills paid for, the more volatile and risky his portfolio will likely become.
+        ■ An effective potential portfolio optimizer would not try and ‘overperform’ with its investments. With the current setup, the portfolio's stocks are based on the user's subjective risk assesment, and the 'best possible' portfolio weight allocation. Part of the vision of the project would be to 
+    ○ Advanced functionality, which has ben achieved somehwat is to create different portfolios based on the users initial requests, which at the current moment is related to risk assesment, afterwhich a second round of portfolio optimization takes place. To clarify - the application serves to take in user inputs on their needs via comand line inputs, and then does the 'optimization work' based on the users demands. An effective portfolio optimizer cannot only do what the user wants, but also force the user to take into consideration the implications of the data-- which is behind much of FinTech's value.
+
+    **Note** : original 'project plan' can be found in the repository as a .pdf.
+
 
 
 ## Technologies
 
 > This project uses the software jupyter lab with the following  softwares, and their installed versions :
 
-# Name                    Version                   Build  Channel
-_anaconda_depends         2022.10                  py39_2  
-_ipyw_jlab_nb_ext_conf    0.1.0            py39hecd8cb5_1  
-alabaster                 0.7.12             pyhd3eb1b0_0  
-anaconda                  custom                   py39_1  
-anaconda-client           1.11.0           py39hecd8cb5_0  
-anaconda-navigator        2.3.2            py39hecd8cb5_0  
-anyio                     3.5.0            py39hecd8cb5_0  
-appdirs                   1.4.4              pyhd3eb1b0_0  
-applaunchservices         0.3.0            py39hecd8cb5_0  
-appnope                   0.1.2           py39hecd8cb5_1001  
-appscript                 1.1.2            py39h9ed2024_0  
-argon2-cffi               21.3.0             pyhd3eb1b0_0  
-argon2-cffi-bindings      21.2.0           py39hca72f7f_0  
-arrow                     1.2.3            py39hecd8cb5_0  
-astroid                   2.11.7           py39hecd8cb5_0  
-astropy                   5.1              py39h67323c0_0  
-atomicwrites              1.4.0                      py_0  
-attrs                     22.1.0           py39hecd8cb5_0  
-automat                   20.2.0                     py_0  
-autopep8                  1.6.0              pyhd3eb1b0_1  
-babel                     2.11.0           py39hecd8cb5_0  
-backcall                  0.2.0              pyhd3eb1b0_0  
-backports                 1.1                pyhd3eb1b0_0  
-backports.functools_lru_cache 1.6.4              pyhd3eb1b0_0  
-backports.tempfile        1.0                pyhd3eb1b0_1  
-backports.weakref         1.0.post1                  py_1  
-bcrypt                    3.2.0            py39hca72f7f_1  
-beautifulsoup4            4.11.1           py39hecd8cb5_0  
-binaryornot               0.4.4              pyhd3eb1b0_1  
+
+
+
+ 
+
+
+The following python modules are also used in the application. Remember to install these packages via Terminal for MacOS/Linux or GitBash for windows clients. 
+
+* [pandas](https://github.com/pandas-dev/pandas) - pandas is used to interact with data packages, plot data frames, create new dataframes, describe abailable data, and helps traders and fintech proffesionals organize financial data to perform advanced decisionmaking. 
+
+* [pathlib](https://github.com/python/cpython/blob/main/Lib/pathlib.py) - Allows the user to specify the path to a data frame / any data in a csv file. 
+
+* [hvplot.pandas](https://hvplot.holoviz.org/user_guide/Pandas_API.html)
+- If hvplot and pandas are both installed, then we can use the pandas.options.plotting.backend to control the output of pd.DataFrame.plot and pd.Series.plot. This notebook is meant to recreate the pandas visualization docs.
+
+* [sqlalchemy]
+(https://github.com/sqlalchemy/sqlalchemy)
+- SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL. SQLAlchemy provides a full suite of well known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+
+* [numpy]
+(https://github.com/numpy/numpy)
+- NumPy is the fundamental package for scientific computing with Python. It provides: a powerful N-dimensional array object, sophisticated (broadcasting) functions tools for integrating C/C++ and Fortran code, useful linear algebra, Fourier transform, and random number capabilities. 
+
+* [json]
+(https://github.com/nlohmann/json)
+- JSON (JavaScript Object Notation), specified by RFC 7159 (which obsoletes RFC 4627) and by ECMA-404, is a lightweight data interchange format inspired by JavaScript object literal syntax (although it is not a strict subset of JavaScript. 
+
+* [os]
+(https://docs.python.org/3/library/os.html)
+- This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see open(), if you want to manipulate paths, see the os.path module, and if you want to read all the lines in all the files on the command line see the fileinput module. For creating temporary files and directories see the tempfile module, and for high-level file and directory handling see the shutil module..
+
+* [dotenv]
+(https://pypi.org/project/python-dotenv/)
+- Python-dotenv reads key-value pairs from a .env file and can set them as environment variables. It helps in the development of applications following the 12-factor principles.
+
+* [alpaca_trade_api]
+(https://github.com/alpacahq/alpaca-trade-api-python)
+- alpaca-trade-api-python is a python library for the Alpaca Commission Free Trading API. It allows rapid trading algo development easily, with support for both REST and streaming data interfaces. For details of each API behavior, please see the online API document.
+
+* [requests]
+(https://pypi.org/project/requests/)
+- Requests is a simple, yet elegant, HTTP library..
+
+* [MCForecastTools]
+- 'Monte Carlo Forecast Tools' provided by the Berkley Fintech Bootcamp; provides functionality to help interact with data, and simulate market results with varying weight, stock, and time paramaters.
+
+
+
+
+
+## Installation Guide
+
+There are four installations neccesary for the program to run. Install all modules and libraries neccesary by first activating your conda dev environment via terminal (for MacOS) or GitBash (Windows/Linux) command : ''' conda activate dev'''. 
+
+After activating the dev environment, install the following libraries via. the command line :
+
+'''python
+    pip3 install pandas
+    pip3 install numpy
+    pip3 install pathlib
+    conda install -c pyviz hvplot geoviews
+    conda install -c conda-forge voila
+    pip install SQLAlchemy
+    pip install json
+    conda install os
+    conda install requests
+    pip install alpaca_trade_api
+
+'''
+## Usage
+
+In order to interact with the application, please first clone the repository, and make sure all packages and depencies are instaled. After cloning the repository, please use Terminal for Mac or GitBash for Windows to activate conda dev environment. After the environment has ben set up, feel free to begin accessing the project main file : '' portfolio_curator.ipynb '' . The notebook contains both the functional code and much explanation of how and why the code was implemented the way it was. By progressing through the notebooks, seperated and labelled by distinct 'parts' and 'steps', you may look through the design proccess and understand how the user inputs may affect the results. 
+
+As of now, the user cannot interact directly with the application via. command line - but this is definetely in progress! - infact, the 'app.py' module will eventually be able to run the application without the notebook's interference, via a CLI. 
+Input the following input in order to interact with the application via. command line (still in beta) :
+
+'''python
+python3 app.py
+'''
+
+NOTE : remember to be in the application folder (clone) when inputing the command.
+---
+
+
+## Contributors
+
+The sole contributor for this project is:
+
+**NAJIB ABOU NASR**
+ no instagram or linkedin yet!
+---
+
+## License
+
+Using the 'MIT' license!
+--- 
+
+## History
+
+### 
+    Here, I documented my command line inputs, to show the changes I had made, and document the debugging and programing process:  
+---
+
+
+## Full List of Installed Libraries and Dependencies :
+
+
+Name                ,    Version         ,          Build  Channel
+_anaconda_depends      ,   2022.10      ,            py39_2  
+_ipyw_jlab_nb_ext_conf   , 0.1.0      ,      py39hecd8cb5_1  
+alabaster             ,    0.7.12     ,        pyhd3eb1b0_0  
+anaconda               ,   custom      ,             py39_1  
+anaconda-client        ,   1.11.0     ,      py39hecd8cb5_0  
+anaconda-navigator     ,   2.3.2    ,        py39hecd8cb5_0  
+anyio                   ,  3.5.0     ,       py39hecd8cb5_0  
+appdirs                 ,  1.4.4      ,        pyhd3eb1b0_0  
+applaunchservices       ,  0.3.0       ,     py39hecd8cb5_0  
+appnope                 ,  0.1.2       ,    py39hecd8cb5_1001  
+appscript               ,  1.1.2       ,     py39h9ed2024_0  
+argon2-cffi             ,  21.3.0      ,       pyhd3eb1b0_0  
+argon2-cffi-bindings    ,  21.2.0      ,     py39hca72f7f_0  
+arrow                   ,  1.2.3       ,     py39hecd8cb5_0  
+astroid                 ,  2.11.7      ,     py39hecd8cb5_0  
+astropy                ,   5.1         ,     py39h67323c0_0  
+atomicwrites            ,  1.4.0       ,               py_0  
+attrs                   ,  22.1.0      ,     py39hecd8cb5_0  
+automat                 ,  20.2.0      ,               py_0  
+autopep8                ,  1.6.0       ,       pyhd3eb1b0_1  
+babel                     2.11.0      ,     py39hecd8cb5_0  
+backcall                  0.2.0       ,       pyhd3eb1b0_0  
+backports                 1.1         ,       pyhd3eb1b0_0  
+backports.functools_lru_cache 1.6.4    ,          pyhd3eb1b0_0  
+backports.tempfile        1.0          ,      pyhd3eb1b0_1  
+backports.weakref         1.0.post1    ,              py_1  
+bcrypt                    3.2.0         ,,   py39hca72f7f_1  
+beautifulsoup4            4.11.1       ,    py39hecd8cb5_0  
+binaryornot               0.4.4        ,      pyhd3eb1b0_1  
 bitarray                  2.5.1            py39hca72f7f_0  
 bkcharts                  0.2              py39hecd8cb5_1  
 black                     21.7b0                   pypi_0    pypi
@@ -464,93 +590,4 @@ zope                      1.0              py39hecd8cb5_1
 zope.interface            5.4.0            py39h9ed2024_0  
 zstandard                 0.18.0           py39hca72f7f_0  
 zstd                      1.5.2                hcb37349_0  
-
-
-The following python modules are also used in the application. Remember to install these packages via Terminal for MacOS/Linux or GitBash for windows clients. 
-
-* [pandas](https://github.com/pandas-dev/pandas) - pandas is used to interact with data packages, plot data frames, create new dataframes, describe abailable data, and helps traders and fintech proffesionals organize financial data to perform advanced decisionmaking. 
-
-* [pathlib](https://github.com/python/cpython/blob/main/Lib/pathlib.py) - Allows the user to specify the path to a data frame / any data in a csv file. 
-
-* [hvplot.pandas](https://hvplot.holoviz.org/user_guide/Pandas_API.html)
-- If hvplot and pandas are both installed, then we can use the pandas.options.plotting.backend to control the output of pd.DataFrame.plot and pd.Series.plot. This notebook is meant to recreate the pandas visualization docs.
-
-* [sqlalchemy]
-(https://github.com/sqlalchemy/sqlalchemy)
-- SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL. SQLAlchemy provides a full suite of well known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
-
-* [numpy]
-(https://github.com/numpy/numpy)
-- NumPy is the fundamental package for scientific computing with Python. It provides: a powerful N-dimensional array object, sophisticated (broadcasting) functions tools for integrating C/C++ and Fortran code, useful linear algebra, Fourier transform, and random number capabilities. 
-
-* [json]
-(https://github.com/nlohmann/json)
-- JSON (JavaScript Object Notation), specified by RFC 7159 (which obsoletes RFC 4627) and by ECMA-404, is a lightweight data interchange format inspired by JavaScript object literal syntax (although it is not a strict subset of JavaScript. 
-
-* [os]
-(https://docs.python.org/3/library/os.html)
-- This module provides a portable way of using operating system dependent functionality. If you just want to read or write a file see open(), if you want to manipulate paths, see the os.path module, and if you want to read all the lines in all the files on the command line see the fileinput module. For creating temporary files and directories see the tempfile module, and for high-level file and directory handling see the shutil module..
-
-* [dotenv]
-(https://pypi.org/project/python-dotenv/)
-- Python-dotenv reads key-value pairs from a .env file and can set them as environment variables. It helps in the development of applications following the 12-factor principles.
-
-* [alpaca_trade_api]
-(https://github.com/alpacahq/alpaca-trade-api-python)
-- alpaca-trade-api-python is a python library for the Alpaca Commission Free Trading API. It allows rapid trading algo development easily, with support for both REST and streaming data interfaces. For details of each API behavior, please see the online API document.
-
-* [requests]
-(https://pypi.org/project/requests/)
-- Requests is a simple, yet elegant, HTTP library..
-
-* [MCForecastTools]
-- 'Monte Carlo Forecast Tools' provided by the Berkley Fintech Bootcamp; provides functionality to help interact with data, and simulate market results with varying weight, stock, and time paramaters.
-
-
-
-
-
-## Installation Guide
-
-There are four installations neccesary for the program to run. Make sure these are installed via terminal (for MacOS) or GitBash (Windows/Linux)
-
-'''python
-    pip3 install pandas
-    pip3 install numpy
-    pip3 install pathlib
-    conda install -c pyviz hvplot geoviews
-    conda install -c conda-forge voila
-    pip install SQLAlchemy
-
-'''
-## Usage
-
-In order to interact with the application, please first clone the repository, and then in the command line run type in:
-
-'''python
-python risk_return_analysis.ipynb
-'''
-NOTE : remember to be in the application folder (clone) when imputing the command.
----
-
-
-## Contributors
-
-The sole contributor for this project is:
-
-**NAJIB ABOU NASR**
- no instagram or linkedin yet!
----
-
-## License
-
-Using the 'MIT' license!
---- 
-
-## History
-
-### 
-    Here, I documented my command line inputs, to show the changes I had made, and document the debugging and programing process:  
----
-
 
