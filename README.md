@@ -10,7 +10,7 @@ The user will plug in their user information via the comand line interface, and 
 
 The vision of the application will be to create a medical bot that will be able to compile a portfolio for the user, based on the medical insurance information provided. Many wealthy investors, or individuals with relatively low-cost medical insurance, may have the opportunity to set aside a certain amount of capital to allow insurance to ‘pay for itself’. Such an investment would have to be a significant investment indeed, but the prospect of having a potentially ‘free’ insurance coverage will be attractive to many investors. Dividend yields, crypto-currency staking yields, as well as stock returns may be evaluated as possible investment options. Instead of saving money, we could look to curate a portfolio that could potentially ‘completely pay for’ our medical insurance.
 
-## Features and Implementation - Vision:
+## Features and Implementation - Vision and Results:
 
  ● Questionary: The program will act as a sort of ‘chat bot’, that will ask the user about their current insurance information. As of now, the user will only be prompted for their age, their current medical insurance charges, and their risk tolerance.  The complexity could develop as follows, in further project iterations / updates :
     ○ The program could ask for medical insurance-related information, and follow that up with a few parameters for increased functionality – such as the country they live in, their state, and so on.
@@ -25,6 +25,12 @@ The vision of the application will be to create a medical bot that will be able 
         ■ The tradeoff would be that the sooner the customer wants to have his medical bills paid for, the more volatile and risky his portfolio will likely become.
         ■ An effective potential portfolio optimizer would not try and ‘overperform’ with its investments. With the current setup, the portfolio's stocks are based on the user's subjective risk assesment, and the 'best possible' portfolio weight allocation. Part of the vision of the project would be to 
     ○ Advanced functionality, which has ben achieved somehwat is to create different portfolios based on the users initial requests, which at the current moment is related to risk assesment, afterwhich a second round of portfolio optimization takes place. To clarify - the application serves to take in user inputs on their needs via comand line inputs, and then does the 'optimization work' based on the users demands. An effective portfolio optimizer cannot only do what the user wants, but also force the user to take into consideration the implications of the data-- which is behind much of FinTech's value.
+● Results :
+    ○ 1. The analysis has quantified how much more you are expected to pay in medical insurance costs, as you get older.
+    ○ 2. Out of 50 of the most highly weighed stocks in the S&P 500, we have ben able to identify and seperate those which stand out in terms of potential returns, stability, and a strong ratio between the two!
+    ○ 3. The application has taken in the user input, and levied said input to use by creating dynamic portfolio based on risk assesment - (Will likely be made to be even more dynamic in the future)
+● Plans :
+    ○ 1. Implement the portfolio optimizer.
 
     **Note** : original 'project plan' can be found in the repository as a .pdf.
 
