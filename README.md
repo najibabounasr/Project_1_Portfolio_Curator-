@@ -86,6 +86,9 @@ The following python modules are also used in the application. Remember to insta
 * [MCForecastTools]
 - 'Monte Carlo Forecast Tools' provided by the Berkley Fintech Bootcamp; provides functionality to help interact with data, and simulate market results with varying weight, stock, and time paramaters.
 
+* [seaborn]
+- Seaborn is a library for making statistical graphics in Python. It builds on top of matplotlib and integrates closely with pandas data structures.
+
 
 
 
