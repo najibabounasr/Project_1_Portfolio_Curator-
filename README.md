@@ -12,29 +12,31 @@ The vision of the application will be to create a medical bot that will be able 
 
 ## Features and Implementation - Vision and Results:
 
- ● Questionary: The program will act as a sort of ‘chat bot’, that will ask the user about their current insurance information. As of now, the user will only be prompted for their age, their current medical insurance charges, and their risk tolerance.  The complexity could develop as follows, in further project iterations / updates :
-    ○ The program could ask for medical insurance-related information, and follow that up with a few parameters for increased functionality – such as the country they live in, their state, and so on.
-    ○ The program could ask for detailed medical information, and detailed portfolio specifications, which would mean that there would have to be a large amount of underlying code. The Ability to increase functionality, improve data reliability, and allow for more predictive features may open this project up to act as a ‘base’, through which all ensuing projects can add upon.
-● Medical insurance prediction - based on provided information on the questionary:
-    ○ Currently, the medical insurance prediction is done via. quantitatively analyzing the medical insurance data as if it were an appreciating asset. By using the 'age' input as a replacement for 'date', and the 'medical charges' as a replacement for 'price', we can treat the medical insurance information as an appreciating asset. By applying .pct_change(), the program can find the 'return value' of the medical insurance data, or the increase in it's price.
-    ○ Using annual medical insurance charges and finding the cumulative returns of the increasing medical insurance costs, we can input the users reported md charge and age, and plot the potential increased in medical insurance costs. once this has ben done, we can compare our results to ouur optimized portfolios returns, and see when/if the portfolio has began producing cumulative returns greater than those of the rising MD insurance.
-    ○ The program finds the rate-of-change in medical insurance costs, to make a customized prediction (this was the course of action, due to reliability concerns).
-● Portfolio Curator / Optimization:
-    ○ The program uses an API to generate or ‘pull in’ data. Alpacas API was used, due to it's ease of use and the crypotcurrency holdings which can be played around with in further updates. APi's allow users to pull in and access stocks, and cryptocurrency securities. I could create a ‘monte carlo sim’ to make a prediction while the program is running. The key would be to have an effective way of curating semi-random portfolios, and evaluating which ones could eventually pay for the user's medical insurance.
-    ○ Potentially, depending on how ‘soon’ the user wishes for his ‘MDI portfolio to cover his insurance, different timeframes could be put in place. A question could eventually be asked : ‘in how many years are you looking to have your insurance bill covered?’-- such decisions need time to think through the overall design of the application.
-        ■ The tradeoff would be that the sooner the customer wants to have his medical bills paid for, the more volatile and risky his portfolio will likely become.
-        ■ An effective potential portfolio optimizer would not try and ‘overperform’ with its investments. With the current setup, the portfolio's stocks are based on the user's subjective risk assesment, and the 'best possible' portfolio weight allocation. Part of the vision of the project would be to 
-    ○ Advanced functionality, which has ben achieved somehwat is to create different portfolios based on the users initial requests, which at the current moment is related to risk assesment, afterwhich a second round of portfolio optimization takes place. To clarify - the application serves to take in user inputs on their needs via comand line inputs, and then does the 'optimization work' based on the users demands. An effective portfolio optimizer cannot only do what the user wants, but also force the user to take into consideration the implications of the data-- which is behind much of FinTech's value.
-● Results :
-    ○ 1. The analysis has quantified how much more you are expected to pay in medical insurance costs, as you get older.
-    ○ 2. Out of 50 of the most highly weighed stocks in the S&P 500, we have ben able to identify and seperate those which stand out in terms of potential returns, stability, and a strong ratio between the two!
-    ○ 3. The application has taken in the user input, and levied said input to use by creating dynamic portfolio based on risk assesment - (Will likely be made to be even more dynamic in the future)
-● Plans :
-    ○ 1. Implement the portfolio optimizer.
+ - Questionary: The program will act as a sort of ‘chat bot’, that will ask the user about their current insurance information. As of now, the user will only be prompted for their age, their current medical insurance charges, and their risk tolerance.  The complexity could develop as follows, in further project iterations / updates :
+    - The program could ask for medical insurance-related information, and follow that up with a few parameters for increased functionality – such as the country they live in, their state, and so on.
+    - The program could ask for detailed medical information, and detailed portfolio specifications, which would mean that there would have to be a large amount of underlying code. The Ability to increase functionality, improve data reliability, and allow for more predictive features may open this project up to act as a ‘base’, through which all ensuing projects can add upon.
+- Medical insurance prediction - based on provided information on the questionary:
+    - Currently, the medical insurance prediction is done via. quantitatively analyzing the medical insurance data as if it were an appreciating asset. By using the 'age' input as a replacement for 'date', and the 'medical charges' as a replacement for 'price', we can treat the medical insurance information as an appreciating asset. By applying .pct_change(), the program can find the 'return value' of the medical insurance data, or the increase in it's price.
+    - Using annual medical insurance charges and finding the cumulative returns of the increasing medical insurance costs, we can input the users reported md charge and age, and plot the potential increased in medical insurance costs. once this has ben done, we can compare our results to ouur optimized portfolios returns, and see when/if the portfolio has began producing cumulative returns greater than those of the rising MD insurance.
+    - The program finds the rate-of-change in medical insurance costs, to make a customized prediction (this was the course of action, due to reliability concerns).
+- Portfolio Curator / Optimization:
+    - The program uses an API to generate or ‘pull in’ data. Alpacas API was used, due to it's ease of use and the crypotcurrency holdings which can be played around with in further updates. APi's allow users to pull in and access stocks, and cryptocurrency securities. I could create a ‘monte carlo sim’ to make a prediction while the program is running. The key would be to have an effective way of curating semi-random portfolios, and evaluating which ones could eventually pay for the user's medical insurance.
+    - Potentially, depending on how ‘soon’ the user wishes for his ‘MDI portfolio to cover his insurance, different timeframes could be put in place. A question could eventually be asked : ‘in how many years are you looking to have your insurance bill covered?’-- such decisions need time to think through the overall design of the application.
+        - The tradeoff would be that the sooner the customer wants to have his medical bills paid for, the more volatile and risky his portfolio will likely become.
+        - An effective potential portfolio optimizer would not try and ‘overperform’ with its investments. With the current setup, the portfolio's stocks are based on the user's subjective risk assesment, and the 'best possible' portfolio weight allocation. Part of the vision of the project would be to 
+    - Advanced functionality, which has ben achieved somehwat is to create different portfolios based on the users initial requests, which at the current moment is related to risk assesment, afterwhich a second round of portfolio optimization takes place. To clarify - the application serves to take in user inputs on their needs via comand line inputs, and then does the 'optimization work' based on the users demands. An effective portfolio optimizer cannot only do what the user wants, but also force the user to take into consideration the implications of the data-- which is behind much of FinTech's value.
+- Results :
+    - 1. The analysis has quantified how much more you are expected to pay in medical insurance costs, as you get older.
+    - 2. Out of 50 of the most highly weighed stocks in the S&P 500, we have ben able to identify and seperate those which stand out in terms of potential returns, stability, and a strong ratio between the two!
+    - 3. The application has taken in the user input, and levied said input to use by creating dynamic portfolio based on risk assesment - (Will likely be made to be even more dynamic in the future)
+- Plans :
+    - 1. Implement the portfolio optimizer.
 
     **Note** : original 'project plan' can be found in the repository as a .pdf.
 
+### Results :
 
+ - The application, at this current stage, is capable of taking in the user information, and providing the user with a portfolio optimized using the monte-carlo forecaster. The portfolio weights are dynamically created out of the pool of 50 stocks, but the application has not yet ben optimized to work in-tangent with the MD insurance data, to create a 'finished product' capable of being marketed and sold to customers. 
 
 ## Technologies
 
